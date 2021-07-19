@@ -249,7 +249,10 @@ public class RNCameraView extends CameraView implements LifecycleEventListener, 
     int paddingY = (int) ((height - correctHeight) / 2);
     mPaddingX = paddingX;
     mPaddingY = paddingY;
-    preview.layout(paddingX, paddingY, correctWidth + paddingX, correctHeight + paddingY);
+    // preview.layout(paddingX, paddingY, correctWidth + paddingX, correctHeight + paddingY);
+
+     // Update : Dynamic height issue fix
+     preview.layout(paddingX, 0, correctWidth + paddingX, (int)height);
   }
 
   @SuppressLint("all")
